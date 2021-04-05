@@ -26,13 +26,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     // Validate Gender
-    if(isset($_POST['Gender'])){
-      
-        $Check[] = $_POST['Gender'];
-        if (count($Check) > 1) {
+    if(!empty($_POST['gender'])){
+        if (count($_POST['gender']) > 1) {
             $Gender_err = "Please Check one box.";
+              echo "<script type='text/javascript'>alert('check gender');</script>";
         } else {
-            $Gender = $_POST["Gender"];
+            $Gender = $_POST['gender'];
         }
     }
 
@@ -94,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Set parameters
             $uniqid = uniqid();
-            $param_id = substr($uniqid, 0, 5);
+            $param_id = substr($uniqid, 6, 11);
             $param_username = $username;
             $param_email = $email;
             $param_phone = $phone;
@@ -151,10 +150,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <span class="help-block"><?php echo $username_err; ?></span>
             </div>
             <div class="form-group py-2 <?php echo (!empty($Gender_err)) ? 'has-error' : ''; ?>">
-              <input type="checkbox" name="Gender" value="M">
-                <label for="Gender"> Male</label>
-              <input type="checkbox" name="Gender" value="F">
-                <label for="Gender"> Female</label>
+              <input type="checkbox" id = 'Male' name="gender" value="M">
+                <label for="Male"> Male</label>
+
+              <input type="checkbox" id = 'Female' name="gender" value="F">
+                <label for="Female"> Female</label>
                   <span class="help-block"><?php echo $Gender_err; ?></span>
             </div>
             <div class="form-group py-2 <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
