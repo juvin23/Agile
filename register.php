@@ -150,10 +150,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <span class="help-block"><?php echo $username_err; ?></span>
             </div>
             <div class="form-group py-2 <?php echo (!empty($Gender_err)) ? 'has-error' : ''; ?>">
-              <input type="checkbox" id = 'Male' name="gender" value="M">
+              <input type="radio" id = 'Male' name="gender" value="M">
                 <label for="Male"> Male</label>
 
-              <input type="checkbox" id = 'Female' name="gender" value="F">
+              <input type="radio" id = 'Female' name="gender" value="F">
                 <label for="Female"> Female</label>
                   <span class="help-block"><?php echo $Gender_err; ?></span>
             </div>
