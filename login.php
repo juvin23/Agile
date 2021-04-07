@@ -122,6 +122,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
             </div>
+            <p><a href="reset_password.php">Forgot your password?</a></p>
         </form>
     </main>
 </body>
