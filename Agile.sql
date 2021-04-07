@@ -1,8 +1,6 @@
-CREATE DATABASE Agile
-GO
+CREATE DATABASE Agile;
 
-USE Agile
-GO
+USE Agile;
 
 CREATE TABLE Users(
 	UserId CHAR(5) PRIMARY KEY,
@@ -10,6 +8,7 @@ CREATE TABLE Users(
 	Email VARCHAR(150) NOT NULL,
 	Password VARCHAR(150) NOT NULL,
 	NoTelp VARCHAR(15) NOT NULL,
-	Gender CHAR(1) NOT NULL
+	Gender CHAR(1) NOT NULL,
+	DisplayPicture VARCHAR(150)
 );
---DROP TABLE Users
+-- DROP TABLE Users

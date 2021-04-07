@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     // Validate Gender
-    if(!empty($_POST['gender'])){
+    if(empty($_POST['gender'])){
         if (count($_POST['gender']) > 1) {
             $Gender_err = "Please Check one box.";
               echo "<script type='text/javascript'>alert('check gender');</script>";
