@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, otherwise redirect to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
     header("location: login.php");
     exit;
 }
@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_id);
             // Set parameters
             $param_password = $new_password;
-            $param_id = $_SESSION["id"];
+            $param_id = $_SESSION["userid"];
 
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
